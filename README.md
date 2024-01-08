@@ -10,6 +10,7 @@ The jump height is calculated using the following steps:
 3. **Measuring Jump Height**: During the jump, the application measures the difference between the y-coordinate of the hips at the peak of the jump and their position in the calibrated standing pose. This difference, converted from pixels to centimeters, represents the jump height.
 4. **Recording Jump Heights**: Each jump height is recorded and written to a text file for later reference.
 5. **Resetting After Landing**: Once the user lands and the hips return to a position close to the calibrated standing position, the application resets, ready to measure the next jump.
+6. **Displaying MediaPipe pose**: By default pose is displayed. Can be toggled in run-time by pressing 'P' key.
 
 ## Requirements
 To run the Jump Height Tracker, you need to have the following installed:
