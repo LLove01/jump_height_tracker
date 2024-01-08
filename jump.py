@@ -6,6 +6,7 @@ import time
 user_height_in_cm = 183
 landing_tolerance = 0.05
 display_mp_pose = True  # Set to True to display MediaPipe pose
+save_heights = True  # Set to True to save jump heights to a txt file
 
 # Variables for calibration, jump tracking, and history
 is_calibrated = False
@@ -87,7 +88,8 @@ def detect_jump(image, results):
             in_jump = False
             max_jump_height_cm = round(max_jump_height_pixels * pixels_per_cm, 1) if pixels_per_cm else 0
             jump_heights.append(max_jump_height_cm)
-            write_jump_height_to_file(max_jump_height_cm)
+            if save_heights:
+                write_jump_height_to_file(max_jump_height_cm)
             max_jump_height_pixels = 0  # Reset for next jump
 
         # Display jump state and current jump height at the lower left corner
